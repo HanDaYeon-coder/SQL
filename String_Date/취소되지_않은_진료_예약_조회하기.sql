@@ -1,0 +1,6 @@
+SELECT A.APNT_NO, B.PT_NAME, A.PT_NO, A.MCDP_CD, C.DR_NAME, A.APNT_YMD
+from APPOINTMENT as A
+join PATIENT as B on A.PT_NO = B.PT_NO
+join DOCTOR as C on A.MDDR_ID = C.DR_ID
+where A.APNT_YMD like "2022-04-13%" and APNT_CNCL_YN like "N" and A.MCDP_CD like "CS"
+order by A.APNT_YMD
